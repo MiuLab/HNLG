@@ -1,0 +1,79 @@
+area,city centre
+area,riverside
+customer rating,1 out of 5
+customer rating,3 out of 5
+customer rating,5 out of 5
+customer rating,average
+customer rating,high
+customer rating,low
+eatType,coffee shop
+eatType,pub
+eatType,restaurant
+familyFriendly,no
+familyFriendly,yes
+food,Chinese
+food,English
+food,Fast food
+food,French
+food,Indian
+food,Italian
+food,Japanese
+name,Alimentum
+name,Aromi
+name,Bibimbap House
+name,Blue Spice
+name,Browns Cambridge
+name,Clowns
+name,Cocum
+name,Cotto
+name,Fitzbillies
+name,Giraffe
+name,Green Man
+name,Loch Fyne
+name,Midsummer House
+name,Strada
+name,Taste of Cambridge
+name,The Cambridge Blue
+name,The Cricketers
+name,The Dumpling Tree
+name,The Eagle
+name,The Golden Curry
+name,The Golden Palace
+name,The Mill
+name,The Olive Grove
+name,The Phoenix
+name,The Plough
+name,The Punter
+name,The Rice Boat
+name,The Twenty Two
+name,The Vaults
+name,The Waterman
+name,The Wrestlers
+name,Travellers Rest Beefeater
+name,Wildwood
+name,Zizzi
+near,All Bar One
+near,Avalon
+near,Burger King
+near,Café Adriatic
+near,Café Brazil
+near,Café Rouge
+near,Café Sicilia
+near,Clare Hall
+near,Crowne Plaza Hotel
+near,Express by Holiday Inn
+near,Rainbow Vegetarian Café
+near,Raja Indian Cuisine
+near,Ranch
+near,The Bakers
+near,The Portland Arms
+near,The Rice Boat
+near,The Six Bells
+near,The Sorrento
+near,Yippee Noodle Bar
+priceRange,cheap
+priceRange,high
+priceRange,less than £20
+priceRange,moderate
+priceRange,more than £30
+priceRange,£20-25

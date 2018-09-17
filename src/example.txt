@@ -1,0 +1,600 @@
+Input: name NAME eatType pub priceRange more than 30 customer rating 5 out of 5 near NEAR
+First Layer Output: NAMETOKEN pub NEARTOKEN star rating prices
+Second Layer Output: NAMETOKEN pub near NEARTOKEN a 5 star rating prices at 30
+Third Layer Output: NAMETOKEN pub near NEARTOKEN a 5 star rating prices at 30
+Fourth Layer Output: NAMETOKEN pub near NEARTOKEN have a 5 star rating prices start at 30
+
+Input: name NAME eatType pub food english priceRange cheap near NEAR
+First Layer Output: NEARTOKEN NAMETOKEN pub beef price pub food
+Second Layer Output: to NEARTOKEN NAMETOKEN pub beef for the price of 1050 pub food
+Third Layer Output: close to NEARTOKEN NAMETOKEN pub delicious tuscan beef for the cheap price of 1050 delicious pub food
+Fourth Layer Output: close to NEARTOKEN NAMETOKEN pub serve delicious tuscan beef for the cheap price of 1050 delicious pub food
+
+Input: name NAME eatType coffee shop food japanese priceRange less than 20 customer rating low area riverside familyFriendly yes near NEAR
+First Layer Output: NAMETOKEN coffee shop NEARTOKEN riverside family food
+Second Layer Output: NAMETOKEN a coffee shop near NEARTOKEN and the riverside family and than 20 for food
+Third Layer Output: NAMETOKEN a low coffee shop near NEARTOKEN and the riverside that family friendly and less than 20 for japanese food
+Fourth Layer Output: NAMETOKEN be a low rat coffee shop near NEARTOKEN and the riverside that be family friendly and be less than 20 for japanese food
+
+Input: name NAME eatType coffee shop food french priceRange 20-25 area riverside near NEAR
+First Layer Output: NEARTOKEN theme eatery coffee shop NAMETOKEN price range it riverside area
+Second Layer Output: near NEARTOKEN a theme eatery and coffee shop NAMETOKEN with a price range at 20 25 it in the riverside area
+Third Layer Output: near NEARTOKEN a french theme eatery and coffee shop NAMETOKEN with a price range at 20 25 it in the riverside area
+Fourth Layer Output: locate near NEARTOKEN be a french theme eatery and coffee shop call NAMETOKEN with a price range at 20 25 it be in the riverside area
+
+Input: name NAME food french customer rating high area riverside near NEAR
+First Layer Output: food NAMETOKEN river NEARTOKEN
+Second Layer Output: for food the NAMETOKEN by the river to NEARTOKEN
+Third Layer Output: for luxurious french food the NAMETOKEN by the river next to NEARTOKEN
+Fourth Layer Output: for luxurious french food the NAMETOKEN be locate by the river next to NEARTOKEN
+
+Input: name NAME food english priceRange moderate area riverside near NEAR
+First Layer Output: NAMETOKEN restaurant who cuisine food you gem NEARTOKEN riverside area
+Second Layer Output: NAMETOKEN a restaurant who cuisine food you this gem near NEARTOKEN in the riverside area
+Third Layer Output: NAMETOKEN a moderately restaurant who main cuisine english food you this local gem near NEARTOKEN in the riverside area
+Fourth Layer Output: NAMETOKEN be a moderately price restaurant who s main cuisine be english food you will find this local gem near NEARTOKEN in the riverside area
+
+Input: name NAME food french customer rating average area riverside familyFriendly no
+First Layer Output: NAMETOKEN adult french restaurant customer rating riverside area
+Second Layer Output: NAMETOKEN an adult french restaurant with customer rating in the riverside area
+Third Layer Output: NAMETOKEN an adult french restaurant with high customer rating in the riverside area
+Fourth Layer Output: NAMETOKEN be an adult french restaurant with high customer rating locate in the riverside area
+
+Input: name NAME eatType coffee shop food japanese priceRange less than 20 area riverside familyFriendly no near NEAR
+First Layer Output: NAMETOKEN coffee shop food it NEARTOKEN riverside prices it
+Second Layer Output: NAMETOKEN coffee shop food it near NEARTOKEN at the riverside prices than 20 it
+Third Layer Output: NAMETOKEN coffee shop japanese food it near NEARTOKEN at the riverside prices less than 20 it not familyfriendly
+Fourth Layer Output: NAMETOKEN coffee shop serve japanese food it be situate near NEARTOKEN at the riverside prices be less than 20 it be not familyfriendly
+
+Input: name NAME eatType coffee shop food french customer rating low area city centre familyFriendly no
+First Layer Output: city centre NAMETOKEN coffee shop adults customer rating
+Second Layer Output: in the city centre NAMETOKEN a coffee shop for adults with a customer rating
+Third Layer Output: in the city centre NAMETOKEN a french coffee shop for adults with a low customer rating
+Fourth Layer Output: in the city centre lie NAMETOKEN a french coffee shop for adults with a low customer rating
+
+Input: name NAME food fast food priceRange moderate customer rating 3 out of 5 area riverside
+First Layer Output: NAMETOKEN food place riverside area they pricing customer rating
+Second Layer Output: NAMETOKEN a food place in the riverside area they pricing and a customer rating of 3 out of 5
+Third Layer Output: NAMETOKEN a fast food place in the riverside area they moderate pricing and a customer rating of 3 out of 5
+Fourth Layer Output: NAMETOKEN be a fast food place locate in the riverside area they have moderate pricing and a customer rating of 3 out of 5
+
+Input: name NAME food fast food area riverside familyFriendly no near NEAR
+First Layer Output: riverside area NEARTOKEN NAMETOKEN it food restaurant
+Second Layer Output: in the riverside area near NEARTOKEN the NAMETOKEN it a food restaurant
+Third Layer Output: in the riverside area near NEARTOKEN the NAMETOKEN it a fast food restaurant
+Fourth Layer Output: in the riverside area near NEARTOKEN be the NAMETOKEN it be a fast food restaurant
+
+Input: name NAME eatType restaurant food english familyFriendly yes
+First Layer Output: child restaurant food NAMETOKEN
+Second Layer Output: a child restaurant food NAMETOKEN
+Third Layer Output: a child friendly restaurant that english food NAMETOKEN
+Fourth Layer Output: a child friendly restaurant that have english food be NAMETOKEN
+
+Input: name NAME eatType restaurant priceRange 20-25 customer rating 3 out of 5
+First Layer Output: NAMETOKEN restaurant customer rating price range
+Second Layer Output: NAMETOKEN a restaurant with a customer rating of 3 out of 5 and and a price range of 20 25
+Third Layer Output: NAMETOKEN a restaurant with a customer rating of 3 out of 5 and and a price range of 20 25
+Fourth Layer Output: NAMETOKEN be a restaurant with a customer rating of 3 out of 5 and and a price range of 20 25
+
+Input: name NAME eatType coffee shop food italian priceRange cheap customer rating average familyFriendly yes
+First Layer Output: coffee shop NAMETOKEN you food prices customer rating
+Second Layer Output: for a coffee shop NAMETOKEN you food at prices the customer rating
+Third Layer Output: for a familyfriendly coffee shop NAMETOKEN you italian food at affordable prices the customer rating however only average
+Fourth Layer Output: for a familyfriendly coffee shop NAMETOKEN can serve you italian food at affordable prices the customer rating however be only average
+
+Input: name NAME eatType restaurant food italian priceRange high
+First Layer Output: NAMETOKEN restaurant prices
+Second Layer Output: NAMETOKEN an restaurant with prices
+Third Layer Output: NAMETOKEN an italian restaurant with high prices
+Fourth Layer Output: NAMETOKEN be an italian restaurant with high prices
+
+Input: name NAME food indian priceRange cheap
+First Layer Output: NAMETOKEN food price range
+Second Layer Output: NAMETOKEN food in the price range
+Third Layer Output: NAMETOKEN indian food in the cheap price range
+Fourth Layer Output: NAMETOKEN provide indian food in the cheap price range
+
+Input: name NAME food english customer rating 5 out of 5 area riverside familyFriendly yes near NEAR
+First Layer Output: NAMETOKEN family breakfast joint NEARTOKEN river
+Second Layer Output: NAMETOKEN a 5star family breakfast joint near the NEARTOKEN and near the river
+Third Layer Output: NAMETOKEN a 5star family friendly breakfast joint near the NEARTOKEN and near the river
+Fourth Layer Output: NAMETOKEN a 5star family friendly breakfast joint near the NEARTOKEN and near the river
+
+Input: name NAME food english priceRange high customer rating 1 out of 5 area city centre
+First Layer Output: NAMETOKEN city centre it food price range customer rating
+Second Layer Output: NAMETOKEN in the city centre it food a price range and a customer rating of one out of five
+Third Layer Output: NAMETOKEN in the city centre it english food a high price range and a customer rating of one out of five
+Fourth Layer Output: NAMETOKEN be locate in the city centre it offer english food have a high price range and a customer rating of one out of five
+
+Input: name NAME food fast food priceRange 20-25 customer rating high area city centre near NEAR
+First Layer Output: NEARTOKEN NAMETOKEN city centre food place customer rating price range euros
+Second Layer Output: NEARTOKEN near the NAMETOKEN city centre a food place with customer rating and a price range of 20 25 euros
+Third Layer Output: NEARTOKEN near the NAMETOKEN city centre a fast food place with high customer rating and a price range of 20 25 euros
+Fourth Layer Output: NEARTOKEN near the NAMETOKEN city centre be a fast food place with high customer rating and have a price range of 20 25 euros
+
+Input: name NAME food chinese customer rating 1 out of 5
+First Layer Output: NAMETOKEN restaurant food rating
+Second Layer Output: NAMETOKEN a restaurant food with a rating
+Third Layer Output: NAMETOKEN a restaurant that chinese food though with a poor rating
+Fourth Layer Output: NAMETOKEN be a restaurant that offer chinese food though with a poor rating
+
+Input: name NAME priceRange less than 20 area city centre familyFriendly yes near NEAR
+First Layer Output: NAMETOKEN NEARTOKEN city prices they
+Second Layer Output: NAMETOKEN near NEARTOKEN in the city prices than 20 and they
+Third Layer Output: NAMETOKEN near NEARTOKEN in the city their prices less than 20 and they familyfriendly
+Fourth Layer Output: NAMETOKEN be locate near NEARTOKEN in the city centre their prices be less than 20 and they be familyfriendly
+
+Input: name NAME eatType coffee shop food italian priceRange more than 30 area riverside near NEAR
+First Layer Output: coffee shop NAMETOKEN riverside it NEARTOKEN price range
+Second Layer Output: an coffee shop NAMETOKEN at the riverside it near NEARTOKEN and price range than 30
+Third Layer Output: an italian coffee shop NAMETOKEN at the riverside it near NEARTOKEN and its price range more than 30
+Fourth Layer Output: an italian coffee shop call NAMETOKEN be at the riverside it be near NEARTOKEN and its price range be more than 30
+
+Input: name NAME food italian priceRange moderate customer rating 3 out of 5 near NEAR
+First Layer Output: NEARTOKEN place customer rating NAMETOKEN
+Second Layer Output: near NEARTOKEN a place with a customer rating of 3 out of 5 NAMETOKEN
+Third Layer Output: near NEARTOKEN a moderately italian place with a customer rating of 3 out of 5 its NAMETOKEN
+Fourth Layer Output: near NEARTOKEN be a moderately price italian place with a customer rating of 3 out of 5 its call NAMETOKEN
+
+Input: name NAME food english priceRange 20-25 customer rating high area riverside familyFriendly yes near NEAR
+First Layer Output: NAMETOKEN food customers prices it NEARTOKEN riverside
+Second Layer Output: NAMETOKEN food and by customers the prices but it to the NEARTOKEN in riverside
+Third Layer Output: NAMETOKEN english food and highly by its customers the prices average but it easily close to the NEARTOKEN in riverside
+Fourth Layer Output: NAMETOKEN serve english food and be highly rat by its customers the prices be average but it be easily locate close to the NEARTOKEN in riverside
+
+Input: name NAME food french priceRange more than 30 area riverside
+First Layer Output: NAMETOKEN food price range riverside area
+Second Layer Output: NAMETOKEN food price range in the riverside area
+Third Layer Output: NAMETOKEN french food high price range in the riverside area
+Fourth Layer Output: NAMETOKEN french food high price range in the riverside area
+
+Input: name NAME eatType pub food italian customer rating 5 out of 5 near NEAR
+First Layer Output: pub NAMETOKEN food NEARTOKEN customer rating
+Second Layer Output: a pub NAMETOKEN food near NEARTOKEN and a 5 out of 5 customer rating
+Third Layer Output: there a pub NAMETOKEN which italian food its near NEARTOKEN and a 5 out of 5 customer rating
+Fourth Layer Output: there be a pub call NAMETOKEN which serve italian food its near NEARTOKEN and have a 5 out of 5 customer rating
+
+Input: name NAME food chinese priceRange high customer rating average area riverside near NEAR
+First Layer Output: NAMETOKEN food customer ratings price it riverside NEARTOKEN
+Second Layer Output: NAMETOKEN food with customer ratings at a price it in riverside near NEARTOKEN
+Third Layer Output: NAMETOKEN chinese food with average customer ratings at a high price it in riverside near NEARTOKEN
+Fourth Layer Output: NAMETOKEN feature chinese food with average customer ratings at a high price it be locate in riverside near NEARTOKEN
+
+Input: name NAME eatType pub food chinese priceRange 20-25 near NEAR
+First Layer Output: NAMETOKEN pub NEARTOKEN it food range
+Second Layer Output: NAMETOKEN a pub near NEARTOKEN it food in the range of 20 25
+Third Layer Output: NAMETOKEN a pub near NEARTOKEN it chinese food in the range of 20 25
+Fourth Layer Output: NAMETOKEN be a pub locate near NEARTOKEN it offer chinese food in the range of 20 25
+
+Input: name NAME eatType pub food fast food customer rating 5 out of 5 area riverside
+First Layer Output: NAMETOKEN food pub river reviews
+Second Layer Output: NAMETOKEN a food pub by the river reviews
+Third Layer Output: NAMETOKEN a fast food pub by the river which high reviews
+Fourth Layer Output: NAMETOKEN be a fast food serve pub by the river which have receive high reviews
+
+Input: name NAME food english priceRange less than 20 area riverside near NEAR
+First Layer Output: NAMETOKEN restaurant dine meals price range it NEARTOKEN
+Second Layer Output: NAMETOKEN a restaurant dine in meals in the price range it in at NEARTOKEN
+Third Layer Output: NAMETOKEN a restaurant dine in meals in the low price range it in at NEARTOKEN
+Fourth Layer Output: NAMETOKEN be a restaurant provide dine in meals in the low price range it be locate in at NEARTOKEN
+
+Input: name NAME eatType pub food french customer rating 3 out of 5 familyFriendly yes
+First Layer Output: pub NAMETOKEN customer rating cuisine kid
+Second Layer Output: a pub NAMETOKEN a customer rating of 3 out of 5 cuisine and kid
+Third Layer Output: a pub NAMETOKEN a customer rating of 3 out of 5 french cuisine and kid friendly
+Fourth Layer Output: a pub name NAMETOKEN have a customer rating of 3 out of 5 serve french cuisine and be kid friendly
+
+Input: name NAME food italian priceRange less than 20 area riverside familyFriendly no
+First Layer Output: cambridge city centre NAMETOKEN child eatery
+Second Layer Output: outside cambridge city centre NAMETOKEN a child eatery
+Third Layer Output: outside cambridge city centre NAMETOKEN a cheap not child friendly eatery
+Fourth Layer Output: locate outside cambridge city centre be NAMETOKEN a cheap not child friendly eatery
+
+Input: name NAME eatType coffee shop food italian priceRange more than 30 area riverside familyFriendly yes near NEAR
+First Layer Output: coffee shop kid NEARTOKEN NAMETOKEN riverside area price range food
+Second Layer Output: a coffee shop kid near NEARTOKEN NAMETOKEN in the riverside area a price range of than 30 food
+Third Layer Output: a coffee shop that kid friendly near NEARTOKEN NAMETOKEN in the riverside area a price range of more than 30 that italian food
+Fourth Layer Output: a coffee shop that be kid friendly near NEARTOKEN name NAMETOKEN in the riverside area have a price range of more than 30 that serve italian food
+
+Input: name NAME food english priceRange high familyFriendly no near NEAR
+First Layer Output: NAMETOKEN food price it NEARTOKEN it it kids
+Second Layer Output: NAMETOKEN food at a price it near NEARTOKEN it that it kids
+Third Layer Output: NAMETOKEN english food at a high price it near NEARTOKEN it that it not kids friendly
+Fourth Layer Output: NAMETOKEN offer english food at a high price it be near NEARTOKEN it should be note that it be not kids friendly
+
+Input: name NAME food french priceRange more than 30 area city centre familyFriendly no near NEAR
+First Layer Output: NAMETOKEN restaurant city centre it child NEARTOKEN it pounds
+Second Layer Output: NAMETOKEN a restaurant in the city centre it child and near NEARTOKEN it than thirty pounds
+Third Layer Output: NAMETOKEN a french restaurant in the city centre it not child friendly and near NEARTOKEN it more than thirty pounds
+Fourth Layer Output: NAMETOKEN be a french restaurant in the city centre it be not child friendly and be locate near NEARTOKEN it cost more than thirty pounds
+
+Input: name NAME priceRange less than 20 familyFriendly no
+First Layer Output: NAMETOKEN price range
+Second Layer Output: NAMETOKEN and a price range of than 20
+Third Layer Output: NAMETOKEN not familyfriendly and a price range of less than 20
+Fourth Layer Output: NAMETOKEN be not familyfriendly and have a price range of less than 20
+
+Input: name NAME eatType restaurant priceRange more than 30 area riverside
+First Layer Output: riverside area NAMETOKEN restaurant prices
+Second Layer Output: in the riverside area the NAMETOKEN restaurant prices than 30
+Third Layer Output: in the riverside area the NAMETOKEN restaurant prices more than 30
+Fourth Layer Output: in the riverside area be the NAMETOKEN restaurant prices range more than 30
+
+Input: name NAME food indian customer rating average area riverside familyFriendly no near NEAR
+First Layer Output: NAMETOKEN family restaurant rating riverside area NEARTOKEN
+Second Layer Output: NAMETOKEN a family restaurant with an rating in the riverside area near NEARTOKEN
+Third Layer Output: NAMETOKEN a non family friendly indian restaurant with an average rating in the riverside area near NEARTOKEN
+Fourth Layer Output: NAMETOKEN be a non family friendly indian restaurant with an average rating locate in the riverside area near NEARTOKEN
+
+Input: name NAME eatType restaurant food japanese priceRange more than 30
+First Layer Output: NAMETOKEN restaurant price range
+Second Layer Output: NAMETOKEN a restaurant a price range of than 30
+Third Layer Output: NAMETOKEN a japanese restaurant that a price range of more than 30
+Fourth Layer Output: NAMETOKEN be a japanese restaurant that have a price range of more than 30
+
+Input: name NAME eatType coffee shop food japanese priceRange less than 20 customer rating low familyFriendly yes near NEAR
+First Layer Output: NAMETOKEN coffee shop family price range food NEARTOKEN customer rating
+Second Layer Output: NAMETOKEN coffee shop a family with than 20 price range food near NEARTOKEN a customer rating
+Third Layer Output: NAMETOKEN coffee shop a family friendly with less than 20 price range japanese food near NEARTOKEN a low customer rating
+Fourth Layer Output: NAMETOKEN coffee shop be a family friendly with less than 20 price range serve japanese food near NEARTOKEN have a low customer rating
+
+Input: name NAME eatType coffee shop food italian customer rating average area riverside near NEAR
+First Layer Output: NAMETOKEN coffee shop NEARTOKEN riverside food customer rating
+Second Layer Output: NAMETOKEN coffee shop near NEARTOKEN in riverside food and an customer rating
+Third Layer Output: NAMETOKEN coffee shop near NEARTOKEN in riverside fine italian food and an average customer rating
+Fourth Layer Output: NAMETOKEN coffee shop near NEARTOKEN in riverside have fine italian food and an average customer rating
+
+Input: name NAME eatType pub food japanese familyFriendly no near NEAR
+First Layer Output: NAMETOKEN pub family restaurant it NEARTOKEN
+Second Layer Output: NAMETOKEN pub a family restaurant it near NEARTOKEN
+Third Layer Output: NAMETOKEN pub not a family restaurant it near NEARTOKEN
+Fourth Layer Output: NAMETOKEN pub be not a family restaurant it be locate near NEARTOKEN
+
+Input: name NAME eatType coffee shop priceRange more than 30 customer rating low area riverside familyFriendly no near NEAR
+First Layer Output: NAMETOKEN coffee shop river NEARTOKEN prices customer ratings it children
+Second Layer Output: NAMETOKEN a coffee shop along the river near NEARTOKEN the prices while the customer ratings it to children
+Third Layer Output: NAMETOKEN a coffee shop along the river near NEARTOKEN the prices quite high while the customer ratings quite low it not to children there
+Fourth Layer Output: NAMETOKEN be a coffee shop along the river near NEARTOKEN the prices be quite high while the customer ratings be quite low it be not recommend to take children there
+
+Input: name NAME eatType pub food fast food area riverside familyFriendly yes
+First Layer Output: riverside NAMETOKEN food kid pub
+Second Layer Output: on the riverside the NAMETOKEN a food kid pub
+Third Layer Output: on the riverside the NAMETOKEN a fast food kid friendly pub
+Fourth Layer Output: on the riverside the NAMETOKEN be a fast food kid friendly pub
+
+Input: name NAME food english area riverside familyFriendly yes near NEAR
+First Layer Output: NAMETOKEN food kid restaurant riverside area it NEARTOKEN
+Second Layer Output: NAMETOKEN a food kid restaurant in the riverside area it near NEARTOKEN
+Third Layer Output: NAMETOKEN a english food kid friendly restaurant in the riverside area it near NEARTOKEN
+Fourth Layer Output: NAMETOKEN be a english food kid friendly restaurant in the riverside area it be near NEARTOKEN
+
+Input: name NAME eatType coffee shop food italian priceRange 20-25 customer rating high familyFriendly yes
+First Layer Output: NAMETOKEN coffee shop food price range it
+Second Layer Output: NAMETOKEN a coffee shop food at the price range it
+Third Layer Output: NAMETOKEN a italian coffee shop food at the higher price range it childfriendly
+Fourth Layer Output: NAMETOKEN be a wellrespect italian coffee shop offer food at the higher price range it be childfriendly
+
+Input: name NAME eatType coffee shop food italian priceRange cheap customer rating average familyFriendly yes near NEAR
+First Layer Output: family NEARTOKEN NAMETOKEN coffee shop rating
+Second Layer Output: family near NEARTOKEN NAMETOKEN a coffee shop with rating
+Third Layer Output: italian family friendly near NEARTOKEN NAMETOKEN which a cheap coffee shop with average rating
+Fourth Layer Output: italian family friendly near NEARTOKEN be NAMETOKEN which be a cheap coffee shop with average rating
+
+Input: name NAME eatType pub food indian priceRange moderate area riverside familyFriendly no
+First Layer Output: pub NAMETOKEN riverside area food child
+Second Layer Output: a pub NAMETOKEN in the riverside area food and child
+Third Layer Output: there a pub that moderate NAMETOKEN in the riverside area that indian food and not child friendly
+Fourth Layer Output: there be a pub that be moderate price call NAMETOKEN in the riverside area that serve indian food and be not child friendly
+
+Input: name NAME eatType restaurant priceRange more than 30 near NEAR
+First Layer Output: NAMETOKEN restaurant NEARTOKEN
+Second Layer Output: for those to over 30 NAMETOKEN a restaurant near NEARTOKEN
+Third Layer Output: for those to over 30 NAMETOKEN a restaurant near NEARTOKEN
+Fourth Layer Output: for those prepare to pay over 30 NAMETOKEN be a restaurant locate near NEARTOKEN
+
+Input: name NAME eatType restaurant customer rating 3 out of 5 familyFriendly yes
+First Layer Output: child restaurant NAMETOKEN
+Second Layer Output: a child restaurant NAMETOKEN 3 out of 5
+Third Layer Output: a child friendly restaurant NAMETOKEN 3 out of 5
+Fourth Layer Output: a child friendly restaurant call NAMETOKEN be 3 out of 5
+
+Input: name NAME food italian familyFriendly yes
+First Layer Output: NAMETOKEN child
+Second Layer Output: NAMETOKEN and child
+Third Layer Output: NAMETOKEN italian and child friendly
+Fourth Layer Output: NAMETOKEN be italian and child friendly
+
+Input: name NAME eatType pub customer rating 5 out of 5 familyFriendly yes near NEAR
+First Layer Output: customer child pub NEARTOKEN NAMETOKEN
+Second Layer Output: a 5 out of 5 customer child pub near a NEARTOKEN NAMETOKEN
+Third Layer Output: there a 5 out of 5 customer child friendly pub near a NEARTOKEN NAMETOKEN
+Fourth Layer Output: there be a 5 out of 5 customer rat child friendly pub locate near a NEARTOKEN call NAMETOKEN
+
+Input: name NAME eatType coffee shop food french priceRange more than 30 customer rating 5 out of 5 area riverside familyFriendly yes near NEAR
+First Layer Output: coffee shop customer rating NAMETOKEN it riverside area NEARTOKEN it pounds kid
+Second Layer Output: a coffee shop a customer rating of 5 out of 5 NAMETOKEN it in the riverside area near the NEARTOKEN it than 30 pounds and kid
+Third Layer Output: a good coffee shop that a customer rating of 5 out of 5 NAMETOKEN it in the riverside area near the NEARTOKEN it more than 30 pounds and kid friendly
+Fourth Layer Output: a good coffee shop that receive a customer rating of 5 out of 5 be NAMETOKEN it be in the riverside area near the NEARTOKEN it cost more than 30 pounds and be kid friendly
+
+Input: name NAME eatType coffee shop priceRange cheap customer rating average area riverside familyFriendly yes near NEAR
+First Layer Output: NAMETOKEN coffee shop riverside NEARTOKEN
+Second Layer Output: NAMETOKEN a coffee shop in the riverside near NEARTOKEN
+Third Layer Output: NAMETOKEN a cheap coffee shop in the riverside near NEARTOKEN
+Fourth Layer Output: NAMETOKEN be a cheap coffee shop locate in the riverside near NEARTOKEN
+
+Input: name NAME eatType coffee shop food french customer rating average area city centre familyFriendly no near NEAR
+First Layer Output: NEARTOKEN centre city NAMETOKEN it coffee shop
+Second Layer Output: near NEARTOKEN in the centre of the city NAMETOKEN it a coffee shop and
+Third Layer Output: near NEARTOKEN in the centre of the city NAMETOKEN it a french coffee shop that average and not familyfriendly
+Fourth Layer Output: near NEARTOKEN in the centre of the city be NAMETOKEN it be a french coffee shop that be rat average and not familyfriendly
+
+Input: name NAME food indian customer rating 3 out of 5 area riverside familyFriendly yes near NEAR
+First Layer Output: NAMETOKEN food place it kid riverside area NEARTOKEN
+Second Layer Output: NAMETOKEN a 3 out of 5 food place it kid and in the riverside area near NEARTOKEN
+Third Layer Output: NAMETOKEN a 3 out of 5 indian food place it kid friendly and in the riverside area near NEARTOKEN
+Fourth Layer Output: NAMETOKEN be a 3 out of 5 indian food place it be kid friendly and locate in the riverside area near NEARTOKEN
+
+Input: name NAME eatType pub food italian priceRange high customer rating 1 out of 5
+First Layer Output: NAMETOKEN house star establishment food
+Second Layer Output: NAMETOKEN house a one star establishment food
+Third Layer Output: NAMETOKEN public house a one star establishment which food
+Fourth Layer Output: NAMETOKEN public house be a one star establishment which serve food
+
+Input: name NAME food italian priceRange less than 20 familyFriendly yes near NEAR
+First Layer Output: family restaurant NAMETOKEN NEARTOKEN it
+Second Layer Output: a family restaurant NAMETOKEN near NEARTOKEN it
+Third Layer Output: there a family friendly restaurant NAMETOKEN near NEARTOKEN it inexpensive
+Fourth Layer Output: there be a family friendly restaurant NAMETOKEN near NEARTOKEN it be inexpensive
+
+Input: name NAME food italian customer rating low area riverside familyFriendly yes
+First Layer Output: north city centre river family restaurant NAMETOKEN it food star
+Second Layer Output: north of the city centre the river a family restaurant NAMETOKEN it food and 1 star
+Third Layer Output: north of the city centre the river a family restaurant NAMETOKEN it italian food and 1 star
+Fourth Layer Output: north of the city centre overlook the river be a family restaurant name NAMETOKEN it serve italian food and be rat 1 star
+
+Input: name NAME food chinese priceRange less than 20 customer rating low familyFriendly yes near NEAR
+First Layer Output: NAMETOKEN NEARTOKEN it family
+Second Layer Output: the NAMETOKEN near the NEARTOKEN it family and
+Third Layer Output: the NAMETOKEN near the NEARTOKEN it chinese cheap family friendly and low
+Fourth Layer Output: the NAMETOKEN be locate near the NEARTOKEN it serve chinese be cheap family friendly and low rat
+
+Input: name NAME food fast food priceRange less than 20 area city centre familyFriendly no
+First Layer Output: NAMETOKEN food price range it city center
+Second Layer Output: NAMETOKEN food than 20 price range it in city center
+Third Layer Output: NAMETOKEN fast food less than 20 price range it in city center
+Fourth Layer Output: NAMETOKEN provide fast food less than 20 price range it be locate in city center
+
+Input: name NAME priceRange cheap customer rating average area riverside familyFriendly yes
+First Layer Output: riverside area NAMETOKEN family customer rating
+Second Layer Output: in the riverside area NAMETOKEN family and an customer rating
+Third Layer Output: in the riverside area NAMETOKEN family friendly cheap and an average customer rating
+Fourth Layer Output: in the riverside area NAMETOKEN be family friendly cheap and have an average customer rating
+
+Input: name NAME food fast food priceRange more than 30 area riverside familyFriendly yes
+First Layer Output: NAMETOKEN food they children price range riverside
+Second Layer Output: NAMETOKEN food they children the price range and near riverside
+Third Layer Output: NAMETOKEN fast food they children friendly the price range cheap and near riverside
+Fourth Layer Output: NAMETOKEN be fast food they be children friendly the price range be cheap and locate near riverside
+
+Input: name NAME eatType coffee shop food italian priceRange cheap customer rating 5 out of 5 area city centre
+First Layer Output: NAMETOKEN coffee shop city centre it customer rating
+Second Layer Output: NAMETOKEN a coffee shop in the city centre it a customer rating of 5 out of 5
+Third Layer Output: NAMETOKEN a cheap italian coffee shop that in the city centre it a customer rating of 5 out of 5
+Fourth Layer Output: NAMETOKEN be a cheap italian coffee shop that be locate in the city centre it have a customer rating of 5 out of 5
+
+Input: name NAME eatType restaurant food chinese familyFriendly yes
+First Layer Output: NAMETOKEN children restaurant food
+Second Layer Output: NAMETOKEN a children restaurant food
+Third Layer Output: NAMETOKEN a children friendly restaurant that chinese food
+Fourth Layer Output: NAMETOKEN be a children friendly restaurant that serve chinese food
+
+Input: name NAME eatType coffee shop food fast food customer rating 5 out of 5 familyFriendly yes near NEAR
+First Layer Output: NAMETOKEN star coffee shop NEARTOKEN
+Second Layer Output: NAMETOKEN a five star coffee shop near NEARTOKEN
+Third Layer Output: NAMETOKEN a five star coffee shop near NEARTOKEN
+Fourth Layer Output: NAMETOKEN be a five star coffee shop locate near NEARTOKEN
+
+Input: name NAME eatType coffee shop food japanese priceRange more than 30 customer rating low familyFriendly no
+First Layer Output: NAMETOKEN coffee shop food price kids
+Second Layer Output: NAMETOKEN for coffee shop food for price for kids
+Third Layer Output: NAMETOKEN for coffee shop fast food for cheap price for kids friendly
+Fourth Layer Output: NAMETOKEN for coffee shop offer fast food for cheap price for kids friendly
+
+Input: name NAME food fast food priceRange moderate customer rating 1 out of 5
+First Layer Output: NAMETOKEN food price customers it rating
+Second Layer Output: NAMETOKEN food for a price customers it a rating
+Third Layer Output: NAMETOKEN fast food for a moderate price customers it a poor rating
+Fourth Layer Output: NAMETOKEN serve fast food for a moderate price customers have give it a poor rating
+
+Input: name NAME eatType coffee shop food fast food priceRange cheap customer rating 5 out of 5 area riverside
+First Layer Output: coffee shop riverside NAMETOKEN customer rating price range food
+Second Layer Output: a coffee shop on the riverside NAMETOKEN a 5 out of 5 customer rating price range for food
+Third Layer Output: a coffee shop on the riverside NAMETOKEN a 5 out of 5 customer rating its price range fairly cheap for its excellent fast food
+Fourth Layer Output: a coffee shop locate on the riverside call NAMETOKEN have a 5 out of 5 customer rating its price range be fairly cheap for its excellent fast food
+
+Input: name NAME food english priceRange more than 30 customer rating high area city centre familyFriendly yes
+First Layer Output: NAMETOKEN food customer rating it city centre children atmosphere
+Second Layer Output: NAMETOKEN food that 30 and a customer rating it in the city centre and a children atmosphere
+Third Layer Output: NAMETOKEN english food more that 30 and a high customer rating it in the city centre and a children friendly atmosphere
+Fourth Layer Output: NAMETOKEN serve english food cost more that 30 and have a high customer rating it be locate in the city centre and have a children friendly atmosphere
+
+Input: name NAME food indian customer rating average area city centre near NEAR
+First Layer Output: NAMETOKEN food city centre NEARTOKEN
+Second Layer Output: NAMETOKEN food in the city centre near NEARTOKEN
+Third Layer Output: NAMETOKEN average indian food in the city centre near NEARTOKEN
+Fourth Layer Output: NAMETOKEN serve average indian food in the city centre near NEARTOKEN
+
+Input: name NAME food italian customer rating 5 out of 5 area city centre familyFriendly no near NEAR
+First Layer Output: NAMETOKEN NEARTOKEN you food city center rating stars children
+Second Layer Output: NAMETOKEN near NEARTOKEN with you with some food with in the city center with a rating of 5 out of 5 stars no children please
+Third Layer Output: NAMETOKEN near NEARTOKEN with you with some lovely italian food with in the city center with a rating of 5 out of 5 stars no children please
+Fourth Layer Output: NAMETOKEN be near NEARTOKEN with will serve you with some lovely italian food with in the city center with a rating of 5 out of 5 stars no children please
+
+Input: name NAME priceRange 20-25 customer rating 3 out of 5 area riverside familyFriendly no
+First Layer Output: NAMETOKEN riverside rate price range it kid
+Second Layer Output: NAMETOKEN in riverside rate 3 out of 5 and an price range of 20 25 it kid
+Third Layer Output: NAMETOKEN in riverside rate 3 out of 5 and an average price range of 20 25 however it not kid friendly
+Fourth Layer Output: NAMETOKEN in riverside be rate 3 out of 5 and have an average price range of 20 25 however it be not kid friendly
+
+Input: name NAME eatType pub food french priceRange less than 20 area riverside familyFriendly yes
+First Layer Output: NAMETOKEN familyfriendly pub wine cheese
+Second Layer Output: NAMETOKEN an familyfriendly pub wine and cheese
+Third Layer Output: NAMETOKEN an inexpensive familyfriendly pub wine and cheese
+Fourth Layer Output: NAMETOKEN be an inexpensive familyfriendly pub serve wine and cheese
+
+Input: name NAME eatType coffee shop priceRange moderate customer rating 3 out of 5 familyFriendly yes near NEAR
+First Layer Output: NAMETOKEN coffee shop NEARTOKEN customer rating
+Second Layer Output: NAMETOKEN a coffee shop near NEARTOKEN and a customer rating of 3 out of 5
+Third Layer Output: NAMETOKEN a childfriendly coffee shop that near NEARTOKEN and a customer rating of 3 out of 5
+Fourth Layer Output: NAMETOKEN be a moderatelypric childfriendly coffee shop that be locate near NEARTOKEN and have a customer rating of 3 out of 5
+
+Input: name NAME food japanese priceRange moderate area riverside
+First Layer Output: NAMETOKEN restaurant food it riverside price range
+Second Layer Output: NAMETOKEN a restaurant food it by the riverside and the price range
+Third Layer Output: NAMETOKEN a restaurant that japanese food it by the riverside and the price range moderate
+Fourth Layer Output: NAMETOKEN be a restaurant that cook japanese food it be locate by the riverside and the price range be moderate
+
+Input: name NAME eatType restaurant food chinese customer rating high
+First Layer Output: NAMETOKEN restaurant food customer rating
+Second Layer Output: NAMETOKEN a restaurant food customer rating
+Third Layer Output: NAMETOKEN a restaurant that chinese food its customer rating high
+Fourth Layer Output: NAMETOKEN be a restaurant that provide chinese food its customer rating be high
+
+Input: name NAME food french priceRange cheap customer rating 5 out of 5 area riverside familyFriendly yes
+First Layer Output: centre city restaurant NAMETOKEN it restaurant families
+Second Layer Output: in the centre of the city a restaurant NAMETOKEN it a restaurant for families
+Third Layer Output: in the centre of the city there a restaurant NAMETOKEN it a highly yet inexpensive restaurant for families
+Fourth Layer Output: in the centre of the city there be a restaurant call NAMETOKEN it be a highly recommend yet inexpensive restaurant for families
+
+Input: name NAME eatType coffee shop food italian priceRange high customer rating average area riverside
+First Layer Output: NAMETOKEN coffee shop it riverside customer rating price range
+Second Layer Output: NAMETOKEN a coffee shop it by the riverside with an customer rating and a price range
+Third Layer Output: NAMETOKEN a coffee shop that italian it by the riverside with an average customer rating and a high price range
+Fourth Layer Output: NAMETOKEN be a coffee shop that provide italian it be locate by the riverside with an average customer rating and a high price range
+
+Input: name NAME food italian familyFriendly yes near NEAR
+First Layer Output: NAMETOKEN site eat food
+Second Layer Output: NAMETOKEN a site for eat food
+Third Layer Output: NAMETOKEN a site for eat italian food
+Fourth Layer Output: NAMETOKEN be a site for eat italian food
+
+Input: name NAME priceRange 20-25 customer rating 3 out of 5 area riverside familyFriendly no
+First Layer Output: NAMETOKEN kid customers it riverside price range
+Second Layer Output: NAMETOKEN kid but 3 out of 5 by customers it in riverside and an price range of 20 25
+Third Layer Output: NAMETOKEN not kid friendly but 3 out of 5 by customers it in riverside and an average price range of 20 25
+Fourth Layer Output: NAMETOKEN be not kid friendly but have be rat 3 out of 5 by customers it be locate in riverside and have an average price range of 20 25
+
+Input: name NAME food italian priceRange high customer rating average near NEAR
+First Layer Output: NAMETOKEN NEARTOKEN price range
+Second Layer Output: NAMETOKEN near the NEARTOKEN and in the price range
+Third Layer Output: NAMETOKEN near the NEARTOKEN and in the high price range
+Fourth Layer Output: NAMETOKEN be locate near the NEARTOKEN and be in the high price range
+
+Input: name NAME food italian priceRange moderate customer rating 3 out of 5 area city centre familyFriendly yes near NEAR
+First Layer Output: NAMETOKEN NEARTOKEN city centre it kids
+Second Layer Output: NAMETOKEN near NEARTOKEN in city centre it kids
+Third Layer Output: NAMETOKEN near NEARTOKEN in city centre it kids friendly
+Fourth Layer Output: NAMETOKEN be near NEARTOKEN in city centre it be kids friendly
+
+Input: name NAME food japanese priceRange more than 30 customer rating low familyFriendly yes near NEAR
+First Layer Output: children food NAMETOKEN customer rating price range NEARTOKEN
+Second Layer Output: children food NAMETOKEN customer rating and price range than 30 near NEARTOKEN
+Third Layer Output: children friendly japanese food NAMETOKEN which low customer rating and price range more than 30 near NEARTOKEN
+Fourth Layer Output: children friendly japanese food NAMETOKEN which have low customer rating and price range more than 30 be serve near NEARTOKEN
+
+Input: name NAME eatType pub food english priceRange moderate area riverside familyFriendly yes
+First Layer Output: NAMETOKEN food it riverside kid
+Second Layer Output: NAMETOKEN food it near the riverside kid and
+Third Layer Output: NAMETOKEN english food it near the riverside kid friendly and moderately
+Fourth Layer Output: NAMETOKEN serve english food it be near the riverside kid friendly and moderately price
+
+Input: name NAME food fast food customer rating low area city centre
+First Layer Output: NAMETOKEN food restaurant luton budget food
+Second Layer Output: NAMETOKEN a food restaurant in luton budget food
+Third Layer Output: NAMETOKEN a fast food restaurant in luton budget food
+Fourth Layer Output: NAMETOKEN be a fast food restaurant in luton offer budget food
+
+Input: name NAME eatType pub priceRange high customer rating 3 out of 5 area riverside
+First Layer Output: wine spirits star pub river NAMETOKEN pub
+Second Layer Output: wine and spirits 3 star pub by the river at NAMETOKEN pub
+Third Layer Output: wine and spirits 3 star pub by the river at NAMETOKEN pub
+Fourth Layer Output: wine and spirits 3 star pub relax by the river at NAMETOKEN pub
+
+Input: name NAME food japanese priceRange 20-25 area riverside familyFriendly yes near NEAR
+First Layer Output: NEARTOKEN riverside area kid NAMETOKEN price range
+Second Layer Output: near NEARTOKEN in the riverside area kid NAMETOKEN the price range between 20 25
+Third Layer Output: near NEARTOKEN in the riverside area kid friendly NAMETOKEN the price range between 20 25
+Fourth Layer Output: near NEARTOKEN in the riverside area be kid friendly NAMETOKEN the price range be between 20 25
+
+Input: name NAME eatType coffee shop food italian priceRange moderate area riverside familyFriendly yes near NEAR
+First Layer Output: NAMETOKEN coffee shop riverside area NEARTOKEN it food price range
+Second Layer Output: NAMETOKEN coffee shop in the riverside area near the NEARTOKEN it food with a price range and
+Third Layer Output: NAMETOKEN coffee shop in the riverside area near the NEARTOKEN it italian food with a moderate price range and kidsfriendly
+Fourth Layer Output: NAMETOKEN coffee shop be locate in the riverside area near the NEARTOKEN it serve italian food with a moderate price range and be kidsfriendly
+
+Input: name NAME food english customer rating low familyFriendly yes
+First Layer Output: NAMETOKEN food family environment it customer rating
+Second Layer Output: NAMETOKEN food in a family environment it a customer rating
+Third Layer Output: NAMETOKEN english food in a family friendly environment it a low customer rating
+Fourth Layer Output: NAMETOKEN serve english food in a family friendly environment it have a low customer rating
+
+Input: name NAME food english customer rating 5 out of 5 area riverside familyFriendly no
+First Layer Output: customer rating NAMETOKEN restaurant riverside
+Second Layer Output: with 5 out of 5 as a customer rating NAMETOKEN a restaurant on riverside
+Third Layer Output: with 5 out of 5 as a customer rating NAMETOKEN a non familyfriendly english restaurant on riverside
+Fourth Layer Output: with 5 out of 5 as a customer rating NAMETOKEN be a non familyfriendly english restaurant locate on riverside
+
+Input: name NAME eatType restaurant food english customer rating 5 out of 5
+First Layer Output: NAMETOKEN food rating stars
+Second Layer Output: NAMETOKEN food and a rating of five stars
+Third Layer Output: NAMETOKEN traditional english food and a rating of five stars
+Fourth Layer Output: NAMETOKEN serve traditional english food and have be give a rating of five stars
+
+Input: name NAME eatType restaurant priceRange cheap
+First Layer Output: NAMETOKEN price range it restaurant
+Second Layer Output: NAMETOKEN in the price range it a restaurant
+Third Layer Output: NAMETOKEN in the cheap price range it a restaurant
+Fourth Layer Output: NAMETOKEN be in the cheap price range it be a restaurant
+
+Input: name NAME food indian customer rating low near NEAR
+First Layer Output: NEARTOKEN NAMETOKEN restaurant customer rating
+Second Layer Output: near NEARTOKEN NAMETOKEN an restaurant with a customer rating
+Third Layer Output: near NEARTOKEN NAMETOKEN an indian restaurant with a poor customer rating
+Fourth Layer Output: locate near NEARTOKEN NAMETOKEN be an indian restaurant with a poor customer rating
+
+Input: name NAME food english priceRange high area riverside familyFriendly no
+First Layer Output: NAMETOKEN riverside area food kid
+Second Layer Output: NAMETOKEN in the riverside area and food and kid
+Third Layer Output: NAMETOKEN in the riverside area and high english food and not kid friendly
+Fourth Layer Output: NAMETOKEN be locate in the riverside area and feature high price english food and be not kid friendly
+
+Input: name NAME eatType coffee shop food japanese customer rating 5 out of 5 area riverside near NEAR
+First Layer Output: NAMETOKEN coffee shop customer ratings NEARTOKEN riverside area
+Second Layer Output: NAMETOKEN a coffee shop with 5 out of 5 customer ratings near NEARTOKEN in the riverside area
+Third Layer Output: NAMETOKEN a japanese coffee shop with 5 out of 5 customer ratings near NEARTOKEN in the riverside area
+Fourth Layer Output: NAMETOKEN be a japanese coffee shop with 5 out of 5 customer ratings locate near NEARTOKEN in the riverside area
+
+Input: name NAME food english priceRange 20-25 customer rating high area riverside familyFriendly yes near NEAR
+First Layer Output: NAMETOKEN riverside area NEARTOKEN food kids customer rating price range pounds
+Second Layer Output: NAMETOKEN in the riverside area near NEARTOKEN food kids a customer rating and a price range between 20 and 25 pounds
+Third Layer Output: NAMETOKEN in the riverside area near NEARTOKEN english food kids friendly a high customer rating and a price range between 20 and 25 pounds
+Fourth Layer Output: NAMETOKEN in the riverside area near NEARTOKEN have english food be kids friendly have a high customer rating and have a price range between 20 and 25 pounds
+
+Input: name NAME food italian priceRange less than 20 customer rating low area city centre familyFriendly no
+First Layer Output: NAMETOKEN city center it restaurant
+Second Layer Output: NAMETOKEN in the city center it a restaurant and than 20
+Third Layer Output: NAMETOKEN in the city center it a low italian restaurant that not familyfriendly and more than 20
+Fourth Layer Output: NAMETOKEN be locate in the city center it be a low rat italian restaurant that be not familyfriendly and cost more than 20
+
+Input: name NAME eatType pub food italian priceRange high familyFriendly no near NEAR
+First Layer Output: NAMETOKEN NEARTOKEN pub food it children price range
+Second Layer Output: NAMETOKEN near NEARTOKEN a pub food it children and in the price range
+Third Layer Output: NAMETOKEN near NEARTOKEN a pub italian food it not children friendly and in the high price range
+Fourth Layer Output: NAMETOKEN near NEARTOKEN be a pub serve italian food it be not children friendly and in the high price range
+
+Input: name NAME food chinese priceRange cheap customer rating average area riverside
+First Layer Output: food restaurant NAMETOKEN riverside area it customer rating price range
+Second Layer Output: a food restaurant NAMETOKEN in the riverside area it an customer rating and the price range
+Third Layer Output: there a chinese food restaurant NAMETOKEN in the riverside area it an average customer rating and the price range cheap
+Fourth Layer Output: there be a chinese food restaurant call NAMETOKEN in the riverside area it have an average customer rating and the price range be cheap
+
