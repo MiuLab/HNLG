@@ -1,5 +1,6 @@
-## Reference
-Main papers to be cited:
+# Natural Language Generation by Hierarchical Decoding with Linguistic Patterns
+## References
+Main papers to be cited ([NAACL2018](https://arxiv.org/abs/1808.02747) and [SLT2018]()):
 
 ```
 @inproceedings{su2018natural,
@@ -31,7 +32,9 @@ $ conda install spacy nltk
 $ python -m spacy download en
 ```
 
-## Usage:
+## Usage
+
+<b>Please refer to `example_train.sh` and `example_test.sh` for the examples of commands.</b>
 
 ```
 # under src/
@@ -45,7 +48,7 @@ Optional Arguments:
 $ python3 train.py --help
 ```
 
-## Data:
+## Data
 
 ### E2E NLG:
 [Link](http://www.macs.hw.ac.uk/InteractionLab/E2E/)
