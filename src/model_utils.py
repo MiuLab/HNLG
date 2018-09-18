@@ -13,7 +13,7 @@ def collate_fn(batch):
         encoder_input, decoder_labels, inter_labels = \
             [], [[] for _ in range(n_layers)], [[] for _ in range(n_layers)]
     else:
-        encoder_input, decoder_labels, refs = [], [[] for _ in range(n_layers)], []
+        encoder_input, decoder_labels, refs, sf_data  = [], [[] for _ in range(n_layers)], [], []
     for data in batch:
         encoder_input.append(data[0])
         for idx in range(n_layers):
@@ -34,6 +34,7 @@ def collate_fn(batch):
 
     for data in batch:
         refs.append(pad_sequences(data[2], de_max_lengths[-1], 'post'))
+        sf_data.append(data[3])
 
     if is_inter:
         for idx in range(n_layers):
@@ -42,7 +43,7 @@ def collate_fn(batch):
         return encoder_input, decoder_labels, inter_labels, de_lengths
     else:
         # return encoder_input, decoder_labels, de_lengths
-        return encoder_input, decoder_labels, de_lengths, refs
+        return encoder_input, decoder_labels, de_lengths, refs, sf_data
 
 
 def pad_sequences(data, max_length, pad_type):

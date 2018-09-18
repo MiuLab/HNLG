@@ -77,12 +77,12 @@ class DataEngine(Dataset):
             print_time_info("Start reading dataset {} from {}".format(
                 self.dataset, self.data_dir))
             if self.dataset == "E2ENLG":
-                self.input_data, self.output_labels, self.refs = E2ENLG(
+                self.input_data, self.output_labels, self.refs, self.sf_data = E2ENLG(
                         self.data_dir, self.is_spacy, self.is_lemma,
                         self.fold_attr, self.use_punct,
                         self.min_length, self.train)
         else:
-            self.input_data, self.output_labels, self.refs = \
+            self.input_data, self.output_labels, self.refs, self.sf_data = \
                     pickle.load(open(self.save_path, 'rb'))
             print_time_info("Load the data from {}".format(self.save_path))
 
@@ -92,7 +92,7 @@ class DataEngine(Dataset):
             self.tokenize_sents()
             self.crop()
             pickle.dump(
-                    [self.input_data, self.output_labels, self.refs],
+                    [self.input_data, self.output_labels, self.refs, self.sf_data],
                     open(self.save_path, 'wb'))
             print_time_info(
                     "Create the save file {}".format(self.save_path))
@@ -191,5 +191,6 @@ class DataEngine(Dataset):
         return (
             self.input_data[idx],
             [labels[idx] for labels in self.output_labels],
-            self.refs[idx]
+            self.refs[idx],
+            self.sf_data[idx]
         )

@@ -12,7 +12,7 @@ def E2ENLG(
         data_dir, is_spacy, is_lemma, fold_attr,
         use_punct, min_length=-1, train=True):
     # Step 1: Get the raw dialogues from data files
-    raw_dialogues = parse_data(data_dir, fold_attr, train)
+    raw_dialogues, sf_data = parse_data(data_dir, fold_attr, train)
     # Step 2: Parse the dialogues
     dialogues = parse_dialogues(raw_dialogues, is_spacy)
     # Step 3: Build the input data and output labels
@@ -33,7 +33,7 @@ def E2ENLG(
     for _ in range(len(temp_refs)):
         refs_list.append(temp_refs)
 
-    return input_data, output_labels, refs_list
+    return input_data, output_labels, refs_list, sf_data
 
 
 def parse_data(data_dir, fold_attr, train):
@@ -67,11 +67,13 @@ def parse_data(data_dir, fold_attr, train):
         data[idx][1] = data[idx][1].replace("2025", "20 25")
         data[idx][1] = data[idx][1].replace("2530", "25 30")
 
+    sf_data = []
     if fold_attr:
         for idx, d in enumerate(data):
             for a_idx, attr_pair in enumerate(d[0]):
                 data[idx][0][a_idx][1] = attr_pair[1].lower()
             data[idx][1] = data[idx][1].lower()
+            sf_data.append(d[0])
             for attr_pair in d[0]:
                 if attr_pair[0] in ['name', 'near']:
                     if attr_pair[1] in data[idx][1]:
@@ -132,7 +134,9 @@ def parse_data(data_dir, fold_attr, train):
                                     "portland arms",
                                     attr_pair[0].upper()+"TOKEN")
 
+        sf_data_list = deepcopy(sf_data)
         for idx, d in enumerate(data):
+            # data[idx].append(sf_data[idx])
             for a_idx, attr_pair in enumerate(d[0]):
                 if attr_pair[0] in ['name', 'near']:
                     data[idx][0][a_idx][1] = attr_pair[0].upper()
@@ -165,7 +169,14 @@ def parse_data(data_dir, fold_attr, train):
                 new_sent.append(w)
         data[idx][1] = ' '.join(new_sent)
 
-    return data
+    sf_data = []
+    for sf in sf_data_list:
+        temp = dict()
+        for attr_pair in sf:
+            temp[attr_pair[0]] = attr_pair[1]
+        sf_data.append(temp)
+
+    return data, sf_data
 
 
 def parse_dialogues(raw_dialogues, is_spacy):
@@ -203,7 +214,7 @@ def parse_dialogues(raw_dialogues, is_spacy):
             dialogues.append(spacy_parsed_dialog)
         else:
             dialogues.append(nltk_parsed_dialog)
-    del(raw_dialogues)
+    # del(raw_dialogues)
     return dialogues
 
 

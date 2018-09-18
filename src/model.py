@@ -367,7 +367,7 @@ class NLG:
         print(avg_test_ROUGE)
         print(avg_test_best_ROUGE)
 
-        with open("test_result_naacl_ext.txt", 'a') as file:
+        with open("test_results.txt", 'a') as file:
             file.write("{}\n".format(self.dir_name))
             file.write("{}\n{}\n{}\n{}\n{}\n".format(
                 avg_test_single_BLEU,
@@ -383,235 +383,6 @@ class NLG:
                 '\t'.join(map(str, avg_test_ROUGE)),
                 '\t'.join(map(str, avg_test_best_ROUGE))
             ))
-
-    def demo_test(
-            self,
-            raw_encoder_input,
-            epochs,
-            batch_size,
-            criterion,
-            verbose_epochs=1,
-            verbose_batches=1,
-            valid_epochs=1,
-            valid_batches=1000,
-            save_epochs=10,
-            split_teacher_forcing=False,
-            teacher_forcing_ratio=0.5,
-            inner_teacher_forcing_ratio=0.5,
-            inter_teacher_forcing_ratio=0.5,
-            tf_decay_rate=0.9,
-            inner_tf_decay_rate=0.9,
-            inter_tf_decay_rate=0.9,
-            schedule_sampling=False,
-            inner_schedule_sampling=False,
-            inter_schedule_sampling=False,
-            max_norm=0.25,
-            curriculum_layers=2):
-
-
-        testing = True
-
-        # Initialize the loss
-        loss = 0
-        all_loss = 0
-
-
-        batch_size = 1
-        encoder_input = Variable(
-                torch.LongTensor([raw_encoder_input]),
-                volatile=testing)
-        encoder_input = encoder_input.cuda() if use_cuda else encoder_input
-        encoder_hidden = (self.encoder.initAttrHidden(encoder_input, 1) if self.en_use_attr_init_state else self.encoder.initHidden(1))
-        encoder_outputs, encoder_hidden = self.encoder(encoder_input, encoder_hidden)
-
-        decoder_len = [8, 10, 18, 25]
-        decoder_results = [np.zeros((batch_size, decoder_len[idx])) for idx in range(curriculum_layers)]
-
-        use_teacher_forcing = [
-                    [
-                        False for _ in range(decoder_len[idx])
-                    ]
-                    for idx in range(curriculum_layers)
-                ]
-        use_inner_teacher_forcing = use_teacher_forcing
-        use_inter_teacher_forcing = [[0]] + use_teacher_forcing[:-1]
-
-        # BLEU/ROUGE scores
-        bleu_scores = []
-        rouge_scores = []
-
-        all_decoder_inputs = [[] for _ in range(curriculum_layers)]
-        real_decoder_inputs = [[] for _ in range(curriculum_layers)]
-        decoder_inputs = None
-        last_decoder_hiddens = None
-        for d_idx, decoder in enumerate(self.decoders[:curriculum_layers]):
-            # for recording actual inputs
-            _real_decoder_inputs = Variable(torch.LongTensor(batch_size, 1).fill_(_PAD))
-            _real_decoder_inputs = (_real_decoder_inputs.cuda() if use_cuda else _real_decoder_inputs)
-            # Prepare for initial hidden state and cell
-            decoder_hidden = decoder.transform_layer(encoder_hidden)
-
-            # Prepare for first input of certain layer
-            if d_idx == 0:
-                # First input of first layer must be _BOS
-                decoder_input = Variable(torch.LongTensor(batch_size, 1).fill_(_BOS))
-            else:
-                if use_inter_teacher_forcing[d_idx][0]:
-                    decoder_input = Variable(torch.LongTensor(decoder_labels[d_idx-1][:, 0])).unsqueeze(1)
-                else:
-                    decoder_input = decoder_inputs[:, 0].unsqueeze(1)
-            decoder_input = decoder_input.cuda() if use_cuda else decoder_input
-
-            _real_decoder_inputs = torch.cat((_real_decoder_inputs, decoder_input), 1)
-            # Set last_output of the first step to BOS
-            last_output = Variable(torch.LongTensor(batch_size, 1).fill_(_BOS))
-
-            if d_idx < curriculum_layers - 1:
-                next_decoder_inputs = Variable(
-                        torch.LongTensor(
-                            batch_size,
-                            decoder_len[d_idx+1]).fill_(_PAD))
-                next_decoder_inputs = (
-                        next_decoder_inputs.cuda() if use_cuda
-                        else next_decoder_inputs)
-                # for h attention
-                last_decoder_hiddens_temp = Variable(
-                        torch.FloatTensor(
-                            batch_size,
-                            decoder_len[d_idx+1],
-                            self.de_hidden_size*(self.bidirectional+1)
-                        ).fill_(0))
-
-                last_decoder_hiddens_temp = (
-                        last_decoder_hiddens_temp.cuda() if use_cuda
-                        else last_decoder_hiddens_temp)
-
-            # for calculating BLEU
-            hypothesis = torch.LongTensor(batch_size, 1, 1).fill_(_PAD)
-            hypothesis = hypothesis.cuda() if use_cuda else hypothesis
-
-            # Decoding sequence
-            # for repeat_input, remember the offset of the label.
-            label_idx = [0 for _ in range(batch_size)]
-            for idx in range(decoder_len[d_idx]):
-                last_output = last_output.cuda() if use_cuda else last_output
-
-                if decoder.cell == "GRU":
-                    decoder_output, decoder_hidden = decoder(
-                        decoder_input,
-                        decoder_hidden,
-                        encoder_outputs,
-                        last_output=last_output,
-                        last_decoder_hiddens=last_decoder_hiddens
-                    )
-
-
-                topv, topi = decoder_output.data.topk(1)
-                hypothesis = torch.cat((hypothesis, topi), 1)
-                if d_idx < curriculum_layers - 1:
-                    last_decoder_hiddens_temp[:, idx, :] = decoder_hidden.permute(1, 0, 2).contiguous().view(batch_size, -1)
-                    if use_inter_teacher_forcing[d_idx+1][idx]:
-                        next_decoder_inputs[:, idx] = \
-                            Variable(torch.from_numpy(
-                                decoder_labels[d_idx][:, idx])).cuda()
-                    else:
-                        next_decoder_inputs[:, idx] = topi
-
-                decoder_results[d_idx][:, idx] = topi.cpu().numpy().squeeze((1, 2))
-                # Decide next input of decoder
-                if idx != decoder_len[d_idx] - 1:
-                    # input from last step
-                    if use_inner_teacher_forcing[d_idx][idx+1]:
-                        last_output = target.unsqueeze(1)
-                    else:
-                        last_output = Variable(topi).squeeze(1)
-                    # input from last layer
-                    if d_idx == 0:
-                        decoder_input = Variable(topi).squeeze(1)
-                    else:
-                        if self.repeat_input:
-                            decoder_input = np.zeros((batch_size, 1), dtype=np.int64)
-                            predicts = topi.cpu().numpy().squeeze((1, 2))
-                            labels = decoder_inputs.data.cpu().numpy()
-                            for b_idx in range(len(label_idx)):
-                                if predicts[b_idx] == labels[b_idx][
-                                        label_idx[b_idx]]:
-                                    label_idx[b_idx] += 1
-                                decoder_input[b_idx][0] = labels[b_idx][label_idx[b_idx]]
-                            decoder_input = Variable(torch.LongTensor(decoder_input))
-                        else:
-                            if idx >= decoder_len[d_idx-1]:
-                                decoder_input = Variable(torch.LongTensor(batch_size, 1).fill_(_PAD))
-                            else:
-                                decoder_input = decoder_inputs[:, idx+1].unsqueeze(1)
-
-                    decoder_input = (decoder_input.cuda() if use_cuda else decoder_input)
-
-                    _real_decoder_inputs = torch.cat((_real_decoder_inputs, decoder_input), 1)
-
-            if d_idx < curriculum_layers - 1:
-                decoder_inputs = next_decoder_inputs
-                last_decoder_hiddens = last_decoder_hiddens_temp
-
-                # record the layer inputs
-                all_decoder_inputs[d_idx+1] = decoder_inputs.data.cpu().numpy()
-                real_decoder_inputs[d_idx+1] = _real_decoder_inputs.data.cpu().numpy()[:, 1:]
-
-            hypothesis = hypothesis.squeeze(2).cpu().numpy()[:, 1:]
-
-
-        # untokenize the sentence,
-        # e.g. [100, 200, 300] -> ['trouble', 'fall', 'piece']
-        encoder_input = [
-                self.data_engine.tokenizer.untokenize(sent, is_token=True)
-                for sent in raw_encoder_input]
-        decoder_results = [
-                [self.data_engine.tokenizer.untokenize(sent)
-                    for sent in decoder_result]
-                for decoder_result in decoder_results]
-        decoder_labels = [
-                [self.data_engine.tokenizer.untokenize(sent)
-                    for sent in decoder_label]
-                for decoder_label in decoder_labels]
-        # decoder inputs
-        real_decoder_inputs = [
-            [self.data_engine.tokenizer.untokenize(sent)
-             for sent in real_decoder_input]
-            for real_decoder_input in real_decoder_inputs
-        ]
-
-        all_decoder_inputs = [
-            [self.data_engine.tokenizer.untokenize(sent)
-             for sent in all_decoder_input]
-            for all_decoder_input in all_decoder_inputs
-        ]
-        # write test results into files
-        with open(result_path, 'a') as file:
-            for idx in range(batch_size):
-                file.write("---------\n")
-                file.write("Data {}\n".format(idx))
-                file.write("encoder input: {}\n\n".format(
-                    ' '.join(encoder_input[idx])))
-                for d_idx in range(curriculum_layers):
-                    file.write("decoder layer {}\n".format(d_idx))
-                    if d_idx > 0:
-                        file.write(
-                            "input from the last layer:\n{}\n".format(
-                                ' '.join(all_decoder_inputs[d_idx][idx])))
-                        file.write("actual input:\n{}\n".format(
-                            ' '.join(real_decoder_inputs[d_idx][idx])))
-                    file.write("prediction:\n{}\n".format(
-                        ' '.join(decoder_results[d_idx][idx])))
-                    file.write("labels:\n{}\n".format(
-                        ' '.join(decoder_labels[d_idx][idx])))
-                    file.write("BLEU score: {}\n".format(
-                        str(bleu_scores[d_idx][idx])))
-                    file.write("ROUGE_(1,2,L,BE): {}\n".format(
-                        str(', '.join(
-                            map(str, rouge_scores[d_idx][idx])))))
-                    file.write("\n")
-                file.write("\n")
-        return(decoder_results)
 
     def run_batch(
             self,
@@ -648,7 +419,7 @@ class NLG:
         if len(batch) == 3:
             raw_encoder_input, decoder_labels, de_lengths = batch
         else:
-            raw_encoder_input, decoder_labels, de_lengths, refs = batch
+            raw_encoder_input, decoder_labels, de_lengths, refs, sf_data = batch
 
         batch_size = len(raw_encoder_input)
         encoder_input = Variable(
@@ -973,27 +744,27 @@ class NLG:
             # untokenize the sentence,
             # e.g. [100, 200, 300] -> ['trouble', 'fall', 'piece']
             encoder_input = [
-                    self.data_engine.tokenizer.untokenize(sent, is_token=True)
-                    for sent in raw_encoder_input]
+                    self.data_engine.tokenizer.untokenize(sent, sf_data[idx], is_token=True)
+                    for idx, sent in enumerate(raw_encoder_input)]
             decoder_results = [
-                    [self.data_engine.tokenizer.untokenize(sent)
+                    [self.data_engine.tokenizer.untokenize(sent, sf_data[idx])
                         for sent in decoder_result]
-                    for decoder_result in decoder_results]
+                    for idx, decoder_result in enumerate(decoder_results)]
             decoder_labels = [
-                    [self.data_engine.tokenizer.untokenize(sent)
+                    [self.data_engine.tokenizer.untokenize(sent, sf_data[idx])
                         for sent in decoder_label]
-                    for decoder_label in decoder_labels]
+                    for idx, decoder_label in enumerate(decoder_labels)]
             # decoder inputs
             real_decoder_inputs = [
-                [self.data_engine.tokenizer.untokenize(sent)
+                [self.data_engine.tokenizer.untokenize(sent, sf_data[idx])
                  for sent in real_decoder_input]
-                for real_decoder_input in real_decoder_inputs
+                for idx, real_decoder_input in enumerate(real_decoder_inputs)
             ]
 
             all_decoder_inputs = [
-                [self.data_engine.tokenizer.untokenize(sent)
+                [self.data_engine.tokenizer.untokenize(sent, sf_data[idx])
                  for sent in all_decoder_input]
-                for all_decoder_input in all_decoder_inputs
+                for idx, all_decoder_input in enumerate(all_decoder_inputs)
             ]
 
             # write test results into files

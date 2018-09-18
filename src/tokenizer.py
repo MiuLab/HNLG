@@ -122,7 +122,7 @@ class Tokenizer:
                     token_sent.append(_UNK)
         return token_sent
 
-    def untokenize(self, sent, is_token=False):
+    def untokenize(self, sent, sf_data=None, is_token=False):
         untoken_sent = []
         if is_token and self.split_vocab:
             for token in sent:
@@ -134,4 +134,6 @@ class Tokenizer:
                 # if token is _EOS: break
                 # if token in [_BOS, _PAD]: continue
                 untoken_sent.append(self.rev_vocab[token])
+        untoken_sent = [sf_data['name'] if ('name' in sf_data) and (t == 'NAME' or t == 'NAMETOKEN') else t for t in untoken_sent]
+        untoken_sent = [sf_data['near'] if ('near' in sf_data) and (t == 'NEAR' or t == 'NEARTOKEN') else t for t in untoken_sent]
         return untoken_sent
