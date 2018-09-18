@@ -21,7 +21,7 @@ Main papers to be cited ([NAACL2018](https://arxiv.org/abs/1808.02747) and [SLT2
 ## Setup
 
 ```
-# Get the E2ENLG dataset (from link below), and put it under data/E2ENLG/
+# Get the E2ENLG dataset (from the link below), and put it under data/E2ENLG/
 $ mkdir -p data/E2ENLG/
 # take conda for example, create a new environment
 $ conda create -n [your_env_name] python=3
