@@ -1,6 +1,6 @@
 # Natural Language Generation by Hierarchical Decoding with Linguistic Patterns
 ## References
-Main papers to be cited ([NAACL2018](https://arxiv.org/abs/1808.02747) and [SLT2018]()):
+Main papers to be cited ([NAACL2018](https://arxiv.org/abs/1808.02747) and [SLT2018](https://arxiv.org/abs/1809.07629)):
 
 ```
 @inproceedings{su2018natural,
